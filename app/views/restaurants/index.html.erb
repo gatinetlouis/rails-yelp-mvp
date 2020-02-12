@@ -3,13 +3,21 @@
 <%= link_to 'Add a restaurant', new_restaurant_path  %>
 <h1>Restaurants list</h1>
 
-<%= @restaurants.each do |restaurant| %>
-  <div>
-    <h1><%= restaurant.name %></h1>
-    <h2><%= restaurant.address %></h2>
-    <h3><%= restaurant.category %></h3>
-    <p><%= restaurant.phone_number %></p>
-    <%= link_to 'More info here', restaurant_path(restaurant) %>
+<% @restaurants.reverse.each do |restaurant| %>
+
+<div class="card m-3">
+  <div class="card-header">
+    <%= restaurant.name %>
+    <%= ('<i class="far fa-thumbs-up"></i>' * restaurant.average.to_i).html_safe %>
   </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= restaurant.address %></h5>
+    <p class="card-text"><%= restaurant.phone_number %></p>
+    <p class="card-text"><%= restaurant.category %></p>
+    <%= link_to restaurant_path(restaurant) do  %>
+    <p class='btn btn-primary'>More info here</p>
+    <% end %>
+  </div>
+</div>
 <% end %>
 </div>

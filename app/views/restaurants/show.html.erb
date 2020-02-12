@@ -1,4 +1,8 @@
 <div class="container">
   <h1>Welcome to the page of <%= @restaurant.name %></h1>
-  <%= link_to 'Back to all restaurants', restaurants_path  %>
+  <div class="row">
+  <%= link_to 'Back to all restaurants', restaurants_path, class: 'btn btn-primary col-3 m-2' %>
+  <%= link_to 'See reviews',restaurant_reviews_path(@restaurant), class: 'btn btn-warning col-3 m-2'%>
+  <%= link_to 'Give a review here',new_restaurant_review_path(@restaurant), class: 'btn btn-danger col-3 m-2'%>
+  </div>
 </div>
