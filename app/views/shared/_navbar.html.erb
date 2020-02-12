@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+        <%= link_to 'Home', restaurants_path, class: 'nav-link' %>
+
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Add a restaurant', new_restaurant_path, class: 'nav-link' %>
+      </li>
+    </ul>
+    <form action="#" class="form-inline my-2 my-lg-0">
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select name="category_select" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected><%= params[:category_select] %></option>
+            <option value="chinese">Chinese</option>
+            <option value="italian">Italian</option>
+            <option value="japanese">Japanase</option>
+            <option value="french">French</option>
+            <option value="belgian">Belgian</option>
+          </select>
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+</form>
+  </div>
+</nav>
+

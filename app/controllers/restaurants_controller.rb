@@ -1,6 +1,11 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    category = params[:category_select]
+    if category.blank?
+      @restaurants = Restaurant.all
+    else
+      @restaurants = Restaurant.where(category: category)
+    end
   end
 
   def show
